@@ -2,6 +2,9 @@ package com.example.demo.business;
 
 import com.example.demo.data.SomeDataService;
 
+import java.util.Arrays;
+import java.util.OptionalInt;
+
 public class SomeBusinessImpl {
 
     private SomeDataService someDataService;
@@ -11,11 +14,8 @@ public class SomeBusinessImpl {
     }
 
     public int calculateSum(int[] data) {
-        int sum = 0;
-        for (int value : data) {
-            sum += value;
-        }
-        return sum;
+        OptionalInt number = Arrays.stream(data).reduce(Integer::sum);
+        return number.orElse(0);
     }
 
     public int calculateSumUsingDataService() {
