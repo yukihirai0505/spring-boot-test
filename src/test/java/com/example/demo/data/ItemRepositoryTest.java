@@ -22,6 +22,5 @@ public class ItemRepositoryTest {
     public void testFindAll() {
         List<Item> items = repository.findAll();
         assertEquals(3, items.size());
-
     }
 }
