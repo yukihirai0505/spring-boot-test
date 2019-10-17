@@ -4,6 +4,7 @@ import com.example.demo.business.ItemBusinessService;
 import com.example.demo.model.Item;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -65,7 +66,6 @@ public class ItemControllerTest {
                         new Item(2, "Item2", 10, 10),
                         new Item(3, "Item3", 20, 20)
                 )
-
         );
 
         RequestBuilder request = MockMvcRequestBuilders
