@@ -19,8 +19,20 @@ repositories {
     mavenCentral()
 }
 
+sourceSets {
+    test {
+        java {
+            srcDirs = ['src/test/java', 'src/bdd-test/java']
+        }
+        resources {
+            srcDirs = ['src/bdd-test/resources']
+        }
+    }
+}
+
 ext {
     h2Version = '1.4.199'
+    cucumberVersion = '1.2.4'
 }
 
 dependencies {
@@ -29,4 +41,7 @@ dependencies {
     runtimeOnly "com.h2database:h2:${h2Version}"
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation "info.cukes:cucumber-java:${cucumberVersion}"
+    testImplementation "info.cukes:cucumber-junit:${cucumberVersion}"
+    testImplementation "info.cukes:cucumber-spring:${cucumberVersion}"
 }
